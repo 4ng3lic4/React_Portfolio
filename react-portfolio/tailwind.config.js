@@ -35,6 +35,8 @@ module.exports = {
         person3: "url('./assets/person-3.png')",
       },
     },
+
+    //making the website responsive
     screens: {
       xs: "480px",
       ss: "620px",
