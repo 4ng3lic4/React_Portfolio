@@ -3,14 +3,18 @@ import { useState} from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import useMediaQuery from "../hooks/useMediaQuery";
 
+//Creating a component
 const Link = ({ page, selectedPage, setSelectedPage }) => {
     const lowerCasePage = page.toLowerCase();
     return (
+        //AnchorLink comes from the third party library
       <AnchorLink
         className={`${
           selectedPage === lowerCasePage ? "text-yellow" : ""
         } hover:text-yellow transition duration-500`}
+        /*This identifies where we are moving to */
         href={`#${lowerCasePage}`}
+        //We are going to set the selected page of the current link that we've typed currently
         onClick={() => setSelectedPage(lowerCasePage)}
       >
         {page}
@@ -27,9 +31,9 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage}) => {
     return (
       <nav className={`${navbarBackground} z-40 w-full fixed top-0 py-6`}>
         <div className="flex items-center justify-between mx-auto w-5/6">
-          <h4 className="font-playfair text-3xl font-bold">JE</h4>
+          <h4 className="font-playfair text-3xl font-bold">ANGELICA</h4>
   
-          {/* DESKTOP NAV */}
+          {/*  NAVIGATION FOR THE DESKTOP */}
           {isDesktop ? (
             <div className="flex justify-between gap-16 font-opensans text-sm font-semibold">
               <Link
@@ -67,17 +71,17 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage}) => {
             </button>
           )}
   
-          {/* MOBILE MENU POPUP */}
+          {/* Mobile Friendly pop-up Menu  */}
           {!isDesktop && isMenuToggled && (
             <div className="fixed right-0 bottom-0 h-full bg-blue w-[300px]">
-              {/* CLOSE ICON */}
+              {/* close-icon */}
               <div className="flex justify-end p-12">
                 <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
                   <img alt="close-icon" src="../assets/close-icon.svg" />
                 </button>
               </div>
   
-              {/* MENU ITEMS */}
+              {/* Navigation */}
               <div className="flex flex-col gap-10 ml-[33%] text-2xl text-deep-blue">
                 <Link
                   page="Home"
@@ -111,3 +115,5 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage}) => {
       </nav>
     );
 }
+
+export default Navbar;
