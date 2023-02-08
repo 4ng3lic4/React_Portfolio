@@ -12,15 +12,11 @@ import Testimonials from "./scenes/Testimonials";
 import { motion } from "framer-motion";
 
 function App() {
-   //Adding states, this one is stating what part of the navigation from the website we are at
-   const [ selectedPage, setSelectedPage ] = useState("home");
-   const [isTopOfPage, setIsTopOfPage] = useState(true);
-   //This variable is storing the size of the screen
-   const isDesktop= useMediaQuery("(min-width: 1060px)");
+  const [selectedPage, setSelectedPage] = useState("home");
+  const [isTopOfPage, setIsTopOfPage] = useState(true);
+  const isDesktop = useMediaQuery("(min-width: 1060px)");
 
-
-
-   useEffect(() => {
+  useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY === 0) {
         setIsTopOfPage(true);
@@ -100,4 +96,3 @@ function App() {
 }
 
 export default App;
-

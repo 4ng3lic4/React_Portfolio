@@ -1,19 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  //configuring template paths
-  content: ["./src/**/*.{html,js, jsx}"],
-  //add property that allows extra features from Tailwind CSS
-  mode: 'jit',
+  content: ["./src/**/*.{html,js,jsx}"],
+  mode: "jit",
   theme: {
     extend: {
       colors: {
-        //Defining the class names
         "deep-blue": "#010026",
         blue: "#2CBCE9",
         red: "#DC4492",
         yellow: "#FDCC49",
         grey: "#ededed",
-        //these values have a dash because htye have a dash - git 
         "dark-grey": "#757575",
         "opaque-black": "rgba(0,0,0,0.35)",
       },
@@ -35,8 +31,6 @@ module.exports = {
         person3: "url('./assets/person-3.png')",
       },
     },
-
-    //making the website responsive
     screens: {
       xs: "480px",
       ss: "620px",
