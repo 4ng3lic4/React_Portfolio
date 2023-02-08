@@ -1,7 +1,7 @@
 import SocialMediaIcons from "../components/SocialMediaIcons";
 import useMediaQuery from "../hooks/useMediaQuery";
 import { motion } from "framer-motion";
-import AnchorLink from "react-anchor-link-smooth-scroll";
+//import AnchorLink from "react-anchor-link-smooth-scroll";
 
 //Responsive
 const Landing = ({ setSelectedPage }) => {
@@ -35,12 +35,16 @@ const Landing = ({ setSelectedPage }) => {
 
             {/* Main text */}
             <div className="z-30 basis-2/5 mt-12 md:mt-32">
-                {/* Headings */}
+
+                
+                {/* Headings with animation */}
+                
                 <motion.div
                     initial="hidden"
+                //   When we get to this point in the page will run a transition
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.5 }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: 0.9 }}
                     variants={{
                         hidden: { opacity: 0, x: -50 },
                         visible: { opacity: 1, x: 0 },
@@ -73,21 +77,7 @@ const Landing = ({ setSelectedPage }) => {
                         visible: { opacity: 1, x: 0 },
                     }}
                 >
-                    <AnchorLink
-                        className="bg-gradient-rainblue text-deep-blue rounded-sm py-3 px-7 font-semibold
-              hover:bg-blue hover:text-white transition duration-500"
-                        onClick={() => setSelectedPage("contact")}
-                        href="#contact"
-                    >
-                        Contact
-                    </AnchorLink>
-                    <AnchorLink
-                        className="rounded-r-sm bg-gradient-rainblue py-0.5 pr-0.5"
-                        onClick={() => setSelectedPage("contact")}
-                        href="#contact"
-                    >
-                     
-                    </AnchorLink>
+                   
                 </motion.div>
 
                 <motion.div

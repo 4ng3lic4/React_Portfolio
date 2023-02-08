@@ -36,7 +36,7 @@ const Project = ({ title }) => {
 const Projects = () => {
   return (
     <section id="projects" className="pt-48 pb-48">
-      {/* HEADINGS */}
+      {/* Headings */}
       <motion.div
         className="md:w-2/5 mx-auto text-center"
         initial="hidden"
@@ -70,7 +70,7 @@ const Projects = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
-          {/* ROW 1 */}
+          {/* First Row */}
           <div
             className="flex justify-center text-center items-center p-10 bg-red
               max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold"
@@ -80,19 +80,19 @@ const Projects = () => {
           <Project title="Project 1" />
           <Project title="Project 2" />
 
-          {/* ROW 2 */}
+          {/* Second Row */}
           <Project title="Project 3" />
           <Project title="Project 4" />
           <Project title="Project 5" />
 
-          {/* ROW 3 */}
+          {/* Third Row */}
           <Project title="Project 6" />
           <Project title="Project 7" />
           <div
             className="flex justify-center text-center items-center p-10 bg-blue
               max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold"
           >
-            SMOOTH USER EXPERIENCE
+            More projects coming soon!
           </div>
         </motion.div>
       </div>

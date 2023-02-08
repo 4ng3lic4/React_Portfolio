@@ -16,6 +16,7 @@ function App() {
   const [isTopOfPage, setIsTopOfPage] = useState(true);
   const isDesktop = useMediaQuery("(min-width: 1060px)");
 
+  //Checking the window which gives us the position of "Y"
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY === 0) {
@@ -24,7 +25,9 @@ function App() {
       }
       if (window.scrollY !== 0) setIsTopOfPage(false);
     };
+    //add eventListener to the window
     window.addEventListener("scroll", handleScroll);
+    //The array runs when the component is loaded
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -35,6 +38,7 @@ function App() {
         selectedPage={selectedPage}
         setSelectedPage={setSelectedPage}
       />
+      {/* navigation dots on the right side of the page */}
       <div className="w-5/6 mx-auto md:h-full">
         {isDesktop && (
           <DotGroup

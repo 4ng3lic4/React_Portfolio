@@ -7,8 +7,8 @@ const Link = ({ page, selectedPage, setSelectedPage }) => {
   return (
     <AnchorLink
       className={`${
-        selectedPage === lowerCasePage ? "text-yellow" : ""
-      } hover:text-yellow transition duration-500`}
+        selectedPage === lowerCasePage ? "text-blue" : ""
+      } hover:text-blue transition duration-500`}
       href={`#${lowerCasePage}`}
       onClick={() => setSelectedPage(lowerCasePage)}
     >
@@ -65,7 +65,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
           </button>
         )}
 
-        {/* MOBILE MENU POPUP */}
+        {/* Responsive Menu */}
         {!isDesktop && isMenuToggled && (
           <div className="fixed right-0 bottom-0 h-full bg-blue w-[300px]">
             {/* CLOSE ICON */}
